@@ -2,10 +2,13 @@ import {BadRequestException, Injectable, UnauthorizedException} from '@nestjs/co
 import {Repository} from "typeorm";
 import {AccountEntity} from "../entities/account.entity";
 import {UserDTO} from "../dto/user.dto";
+import {InjectRepository} from "@nestjs/typeorm";
 
 @Injectable()
 export class AuthService {
-    constructor(private readonly userRepository: Repository<AccountEntity>) {
+    constructor(
+        @InjectRepository(AccountEntity)
+        private readonly userRepository: Repository<AccountEntity>) {
     }
 
     async signIn(userDto: UserDTO): Promise<void> {

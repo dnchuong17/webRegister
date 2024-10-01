@@ -4,14 +4,16 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AccountEntity } from '../entities/account.entity';
-import { Repository } from 'typeorm';
+import {DataSource, Repository} from 'typeorm';
 import { UserDTO } from '../dto/user.dto';
+import {dataSourceOptions} from "../config/data-source";
 
 @Injectable()
 export class UserService {
   constructor(
     @InjectRepository(AccountEntity)
     private readonly userRepository: Repository<AccountEntity>,
+    private readonly dataSource: DataSource
   ) {}
 
   async getAllUsers() {

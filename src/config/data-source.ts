@@ -10,6 +10,6 @@ export const dataSourceOptions: DataSourceOptions = {
     entities: ['dist/**/*.entity{.ts,.js}'],
     synchronize: true,
 };
+export const dataSource = new DataSource(dataSourceOptions);
 
-const dataSource = new DataSource(dataSourceOptions);
-export default dataSource;
+export default dataSourceOptions;
