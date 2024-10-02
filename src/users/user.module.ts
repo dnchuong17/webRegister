@@ -9,11 +9,11 @@ import { AccountEntity } from '../entities/account.entity';
     TypeOrmModule.forFeature([AccountEntity]), // Register the AccountEntity
   ],
   controllers: [UserController],
-    providers: [
-        {
-            provide: 'User_Service_Chuong',
-            useClass: UserService,
-        },
-    ],
+  providers: [
+    {
+      provide: 'User_Service_Chuong',
+      useClass: UserService,
+    },
+  ],
 })
 export class UserModule {}

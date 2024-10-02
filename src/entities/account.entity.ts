@@ -13,12 +13,12 @@ export class AccountEntity extends BaseEntity {
 
   @Column()
   userName: string;
-  @Column({default: null, nullable: true})
+  @Column({ default: null, nullable: true })
   userEmail: string;
 
-  @Column({default: null, nullable: true})
+  @Column({ default: null, nullable: true })
   userPhone: string;
 
-  @Column({default: false})
+  @Column({ default: false })
   deleted: boolean;
 }
